@@ -6,6 +6,9 @@
   "author": "Aamir",
   "license": "no",
   "private": false,
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d dist",
