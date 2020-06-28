@@ -1,0 +1,36 @@
+{
+  "name": "guardian-service",
+  "version": "1.0.0",
+  "description": "Authentication service which will provide authentication to the guardian",
+  "main": "index.js",
+  "author": "Aamir",
+  "license": "no",
+  "private": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist",
+    "start": "nodemon --exec babel-node src/index.js",
+    "serve": "npm run build && node dist/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-list-endpoints": "^4.0.1",
+    "express-validator": "^6.6.0",
+    "grpc": "^1.24.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.2",
+    "morgan": "^1.10.0"
+  }
+}
