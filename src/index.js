@@ -1,4 +1,5 @@
 require("./config/db")();
+const sockets = require("./socket.io");
 const http = require("http");
 const express = require("express");
 const morgan = require("morgan");
@@ -38,6 +39,7 @@ app.use((err, req, res, next) => {
 });
 
 const server = http.createServer(app);
+sockets(server);
 server.listen(port, () => {
   console.log(`Server is started on port: ${port}`);
   console.log(listEndpoints(app));

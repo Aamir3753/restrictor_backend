@@ -23,6 +23,27 @@ class ChildService {
     const childs = await childDAO.getListOfChildsWithUserId(userId);
     return childs;
   }
+  async authenticateChildByShortId(shortId) {
+    const child = await childDAO.updateChildByshortId(shortId, {
+      authorized: true,
+    });
+
+    if (!child) {
+      const err = new Error("Invalid ShortId");
+      err.statusCode = 404;
+      throw err;
+    }
+    return child;
+  }
+  async getChildByShortId(shortId) {
+    const child = await childDAO.getChildbyShorId(shortId);
+    if (!child) {
+      const err = new Error("Child Not Found");
+      err.statusCode = 404;
+      throw err;
+    }
+    return child;
+  }
 }
 
 module.exports = ChildService;
